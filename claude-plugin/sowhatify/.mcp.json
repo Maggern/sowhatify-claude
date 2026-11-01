@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "sowhatify": {
+      "type": "http",
+      "url": "https://sowhatify.com/mcp/"
+    }
+  }
+}

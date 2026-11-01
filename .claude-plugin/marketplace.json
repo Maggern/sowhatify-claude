@@ -1,0 +1,16 @@
+{
+  "name": "sowhatify",
+  "description": "SoWhatify for Claude — read any article through your own profile, templates, perspectives and workflows.",
+  "owner": {
+    "name": "SoWhatify",
+    "url": "https://sowhatify.com"
+  },
+  "plugins": [
+    {
+      "name": "sowhatify",
+      "source": "./claude-plugin/sowhatify",
+      "description": "Understand what news, articles and documents mean for you — your SoWhatify profile, templates, perspectives and workflows, in Claude.",
+      "version": "1.1.1"
+    }
+  ]
+}
