@@ -1,6 +1,7 @@
 # Installing SoWhatify for Claude
 
-Three ways in. The first is the one to use.
+Three ways in for Claude Code; the first is the one to use. Claude.ai and Claude
+Desktop take the connector and the skills separately — see section 4.
 
 ## 1. The plugin (Claude Code)
 
@@ -12,7 +13,7 @@ Three ways in. The first is the one to use.
 Then `/mcp` → authorize in the browser. Confirm it worked by asking Claude to
 call `whoami`.
 
-You get the MCP server, the skill, and `/sowhatify:analyze`.
+You get the MCP server, the four skills, and `/sowhatify:analyze`.
 
 ## 2. The connector alone, without the plugin
 
@@ -37,8 +38,9 @@ comes from one open discovery endpoint, and sign-in works.
 
 ### A shorter tool list for chat
 
-The server publishes over 60 tools, which is right for the Chrome extension and for
-authoring work in Claude Code, but more than a chat connector needs. Connecting to
+The server publishes its full tool list — over sixty — which is right for the
+Chrome extension and for authoring work in Claude Code, but more than a chat
+connector needs. Connecting to
 
 ```
 https://sowhatify.com/mcp/?tools=core
@@ -51,17 +53,19 @@ query parameter the caller controls is the wrong place for a permission check.
 
 Recommended for Claude.ai and Claude Desktop. Not for the plugin, and not for
 Claude Code — the skill there uses the authoring tools, which `core` leaves out.
-Plain `/mcp/` keeps them all, so existing connections are unaffected.
+Plain `/mcp/` keeps the full list, so existing connections are unaffected.
 
 ## 3. Personal access token (headless, or by preference)
 
 For a machine with no browser, or if you would rather hold a token than run the
 OAuth flow.
 
-1. Sign in at <https://sowhatify.com/app/claude.php>.
-2. **Set up your MCP connection**, copy the access token. It is shown on its own
-   rather than embedded in a URL — the MCP specification forbids access tokens in
-   a query string.
+1. Sign in at <https://sowhatify.com/app/claude.php> and click **Generate MCP
+   connection** — or, if you already have one, **Regenerate token** under
+   Connections on <https://sowhatify.com/app/account.php#connections>.
+2. Copy the token. It is shown once and on its own rather than embedded in a URL
+   — the MCP specification forbids access tokens in a query string. Generating a
+   new one stops the old one working.
 3. ```
    claude mcp add --transport http sowhatify https://sowhatify.com/mcp/ \
      --header "Authorization: Bearer YOUR_TOKEN"
@@ -69,6 +73,25 @@ OAuth flow.
 
 This replaces the browser sign-in rather than adding to it. The plugin itself no
 longer carries a token field, so use this path outside the plugin.
+
+## 4. Claude.ai and Claude Desktop
+
+These have no plugins. Add the connector as in section 2, then upload the skills:
+
+1. Check code execution is on: Settings → Capabilities. Skills need it.
+2. Download the skill ZIPs from <https://sowhatify.com/connect/claude/>. Keep
+   each one zipped.
+3. Customize → Skills → **+** → Create skill → **Upload a skill**, and pick one
+   ZIP. Repeat for each.
+
+They are the same four skills, renamed `sowhatify`, `sowhatify-template-selection`,
+`sowhatify-competitive-intelligence` and `sowhatify-product-impact` so they read
+clearly beside your other skills, with descriptions short enough for claude.ai's
+200-character limit. A Team or Enterprise owner can add them for everyone under
+Organization settings → Plugins & skills.
+
+The same ZIPs work in Claude Code without the plugin: unzip each into
+`~/.claude/skills/`.
 
 ## Verifying
 

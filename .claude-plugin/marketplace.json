@@ -10,7 +10,7 @@
       "name": "sowhatify",
       "source": "./claude-plugin/sowhatify",
       "description": "Understand what news, articles and documents mean for you — your SoWhatify profile, templates, perspectives and workflows, in Claude.",
-      "version": "1.1.1"
+      "version": "1.1.2"
     }
   ]
 }

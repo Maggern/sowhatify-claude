@@ -22,6 +22,10 @@ email, and you can attach an email later without losing anything.
 See [INSTALLATION.md](INSTALLATION.md) for the token-based fallback (headless
 machines, or if you prefer a personal access token to the browser sign-in).
 
+On claude.ai or Claude Desktop? Plugins are Claude Code only. Add SoWhatify as a
+connector and upload the same four skills as ZIPs, both from
+<https://sowhatify.com/connect/claude/>.
+
 ## How it works
 
 SoWhatify does not run the analysis. **Claude does.**

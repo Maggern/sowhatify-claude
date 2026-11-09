@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.1.2
+
+- The same four skills are now offered as ZIPs for claude.ai and Claude Desktop,
+  on <https://sowhatify.com/connect/claude/>. Built from this folder, so the text
+  is identical; only the names (`sowhatify-` prefix) and the descriptions (within
+  claude.ai's 200 characters) differ.
+- `/sowhatify:analyze` no longer asks which template to use when none was named. It
+  picks one, as the template-selection skill says to.
+- INSTALLATION.md: the token steps pointed at a page that shows no token; they now
+  name the two that do. Tool counts that had drifted are gone. New section on
+  claude.ai and Claude Desktop.
+
 ## 1.1.1
 
 The plugin now has a public home: <https://github.com/Maggern/sowhatify-claude>.
